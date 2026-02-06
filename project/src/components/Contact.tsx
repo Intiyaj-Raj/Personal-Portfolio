@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Send, Mail, Github, Linkedin, Twitter, CheckCircle, AlertCircle } from 'lucide-react';
@@ -9,6 +10,7 @@ const Contact: React.FC = () => {
   const [formData, setFormData] = useState<ContactForm>({
     name: '',
     email: '',
+    phone: '',
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -26,6 +28,12 @@ const Contact: React.FC = () => {
       newErrors.email = 'Email is required';
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
       newErrors.email = 'Invalid email format';
+    }
+
+    if (!formData.phone.trim()) {
+      newErrors.phone = 'Phone number is required';
+    } else if (!/^\+?[1-9]\d{1,14}$/.test(formData.phone.replace(/\s/g, ''))) {
+      newErrors.phone = 'Invalid phone number format';
     }
 
     if (!formData.message.trim()) {
@@ -66,7 +74,6 @@ const Contact: React.FC = () => {
 
       if (response.ok) {
         setSubmitStatus("success");
-        setFormData({ name: "", email: "", message: "" });
       } else {
         setSubmitStatus("error");
       }
@@ -188,6 +195,27 @@ const Contact: React.FC = () => {
                   />
                   {errors.email && (
                     <p className="text-red-500 font-mono text-xs mt-1">{errors.email}</p>
+                  )}
+                </div>
+
+                <div>
+                  <label className="block text-hacker-green font-mono text-sm mb-2">
+                    --phone
+                  </label>
+                  <input
+                    type="tel"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleInputChange}
+                    className={`w-full bg-black border rounded px-4 py-3 text-hacker-green font-mono focus:outline-none focus:ring-2 transition-all ${errors.phone
+                      ? 'border-red-500 focus:ring-red-500/20'
+                      : 'border-hacker-green/50 focus:border-hacker-green focus:ring-hacker-green/20'
+                      }`}
+                    placeholder="+1 (123) 456-7890"
+                    disabled={isSubmitting}
+                  />
+                  {errors.phone && (
+                    <p className="text-red-500 font-mono text-xs mt-1">{errors.phone}</p>
                   )}
                 </div>
 

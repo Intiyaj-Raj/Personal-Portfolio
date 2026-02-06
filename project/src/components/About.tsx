@@ -21,11 +21,11 @@ const About: React.FC = () => {
       animationDelay={0.2}
     >
       <SEOHead
-        title="About Intiyaj Ansari | Full Stack Developer - Mr. Engineer"
+        title="Intiyaj Ansari | Full Stack Developer - Mr. Engineer"
         description="Learn more about Intiyaj Ansari, also known as Mr. Engineer. A full stack developer skilled in frontend, backend, and database solutions, building scalable and secure web applications."
-        url="https://intiyajansarifullstackdeveloper.netlify.app/about"
+        url="https://intiyajansarifullstackdeveloper.netlify.app"
         image="https://intiyajansarifullstackdeveloper.netlify.app/full-stack-developer-intiyaj-og.png"
-        keywords="about Intiyaj Ansari, full stack developer, Mr. Engineer portfolio, frontend backend developer"
+        keywords="Intiyaj Ansari, full stack developer, Mr. Engineer portfolio, frontend backend developer, Intiyaj"
       />
 
       <div className="max-w-7xl mx-auto">
@@ -126,7 +126,7 @@ const About: React.FC = () => {
               <h3 className="text-2xl font-mono text-hacker-green mb-6">
                 personal_detail
               </h3>
-              <div className="space-y-4 text-gray-300 font-mono text-sm leading-relaxed">
+              <div className="space-y-4 text-gray-300 font-mono text-sm leading-relaxed text-justify">
                 <p>
                   Hello, I am INTIYAJ Ansari also known as Mr. Engineer, a Full Stack Developer.
                   I enjoy making websites and apps that are modern, sharp and user friendly.

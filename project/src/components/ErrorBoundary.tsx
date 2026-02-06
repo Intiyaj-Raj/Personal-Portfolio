@@ -37,7 +37,7 @@ class ErrorBoundary extends Component<Props, State> {
           <div className="bg-black/80 border border-red-500/50 rounded-lg p-8 max-w-md w-full text-center">
             <AlertTriangle className="w-16 h-16 text-red-500 mx-auto mb-4" />
             <h1 className="text-2xl font-mono text-red-500 mb-4">
-              {'>'} SYSTEM_ERROR.exe
+              {'>'} SYSTEM_ERROR
             </h1>
             <p className="text-gray-400 font-mono text-sm mb-6">
               An unexpected error occurred in the matrix. The system needs to be rebooted.

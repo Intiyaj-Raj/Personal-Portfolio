@@ -117,7 +117,7 @@ const Hero: React.FC = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 1 }}
           >
-            <span className="text-white">Hi, I'm </span>
+            <span className="text-white">Hi,I'm </span>
             <span className="text-hacker-green relative inline-block glitch-text" data-text="INTIYAJ">
               INTIYAJ
               <motion.span

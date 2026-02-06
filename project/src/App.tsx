@@ -1,23 +1,35 @@
-// import React, { Suspense, lazy } from 'react';
-import { Suspense, lazy } from 'react';
-import { HelmetProvider } from 'react-helmet-async';
-import SEOHead from './components/SEOHead';
-import ErrorBoundary from './components/ErrorBoundary';
-import LoadingSpinner from './components/LoadingSpinner';
-import Navbar from './components/Navbar';
-import MatrixRain from './components/MatrixRain';
-import ParticleEffect from './components/ParticleEffect';
+import { Suspense, lazy, useState, useEffect } from "react";
+import { HelmetProvider } from "react-helmet-async";
+import SEOHead from "./components/SEOHead";
+import ErrorBoundary from "./components/ErrorBoundary";
+import LoadingSpinner from "./components/LoadingSpinner";
+import Navbar from "./components/Navbar";
+import MatrixRain from "./components/MatrixRain";
+import ParticleEffect from "./components/ParticleEffect";
 
-// Lazy load components for better performance
-const Hero = lazy(() => import('./components/Hero'));
-const About = lazy(() => import('./components/About'));
-const Skills = lazy(() => import('./components/Skills'));
-const Certifications = lazy(() => import('./components/Certifications'));
-const Projects = lazy(() => import('./components/Projects'));
-const Contact = lazy(() => import('./components/Contact'));
-const Footer = lazy(() => import('./components/Footer'));
+// Lazy load components
+const Hero = lazy(() => import("./components/Hero"));
+const About = lazy(() => import("./components/About"));
+const Skills = lazy(() => import("./components/Skills"));
+const Certifications = lazy(() => import("./components/Certifications"));
+const Projects = lazy(() => import("./components/Projects"));
+const Contact = lazy(() => import("./components/Contact"));
+const Footer = lazy(() => import("./components/Footer"));
 
 function App() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1500);
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (isLoading) {
+    return <LoadingSpinner />;
+  }
+
   return (
     <HelmetProvider>
       <ErrorBoundary>
