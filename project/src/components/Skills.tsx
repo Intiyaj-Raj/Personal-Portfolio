@@ -35,7 +35,13 @@ const Skills: React.FC = () => {
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
               transition={{ duration: 0.7, delay: categoryIndex * 0.1 }}
               viewport={{ once: false, amount: 0.3 }}
-              className="bg-black/70 border border-hacker-green/30 p-6 rounded-tr-[10px] rounded-bl-[10px]  backdrop-blur-sm hover:border-hacker-green/80 transition-all duration-300 group"
+              className={`
+                bg-black/70 border border-hacker-green/30 p-6 
+                rounded-tr-[10px] rounded-bl-[10px] backdrop-blur-sm 
+                hover:border-hacker-green/80 transition-all duration-300 group
+                
+                ${category === "Tools" ? "xl:col-span-3 xl:w-[60%] xl:mx-auto" : ""}
+              `}
               whileHover={{
                 boxShadow: '0 0 40px rgba(0, 255, 65, 0.3)',
                 scale: 1.02,
@@ -54,7 +60,10 @@ const Skills: React.FC = () => {
                       key={skill.name}
                       initial={{ opacity: 0, x: -20 }}
                       whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.5, delay: (categoryIndex * 0.1) + (index * 0.05) }}
+                      transition={{
+                        duration: 0.5,
+                        delay: categoryIndex * 0.1 + index * 0.05,
+                      }}
                       viewport={{ once: false, amount: 0.5 }}
                       className="group/skill"
                     >
@@ -75,7 +84,13 @@ const Skills: React.FC = () => {
                           className="h-full bg-gradient-to-r from-hacker-green to-hacker-green-light rounded-full relative"
                           initial={{ width: 0, opacity: 0 }}
                           whileInView={{ width: `${skill.level}%`, opacity: 1 }}
-                          transition={{ duration: 1.2, delay: (categoryIndex * 0.1) + (index * 0.05) + 0.3 }}
+                          transition={{
+                            duration: 1.2,
+                            delay:
+                              categoryIndex * 0.1 +
+                              index * 0.05 +
+                              0.3,
+                          }}
                           viewport={{ once: false, amount: 0.5 }}
                         >
                           <motion.div
@@ -96,36 +111,6 @@ const Skills: React.FC = () => {
             </motion.div>
           ))}
         </div>
-
-        {/* Terminal Summary */}
-        {/* <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          viewport={{ once: false, amount: 0.5 }}
-          className="mt-16 bg-black/80 border border-hacker-green/30 rounded-tr-[10px] rounded-bl-[10px]  p-6 backdrop-blur-sm"
-        >
-          <div className="font-mono text-hacker-green text-sm">
-            <div className="flex items-center space-x-2 mb-2">
-              <span className="text-hacker-green">$</span>
-              <span className="text-white">grep -E "(Frontend|Backend|Database)" skills.json | wc -l</span>
-            </div>
-            <div className="text-hacker-green-light ml-4">
-              {skills.length} technologies mastered
-            </div>
-            <div className="flex items-center space-x-2 mt-2">
-              <span className="text-hacker-green">$</span>
-              <span className="text-white">echo "Average proficiency: $(( $(sum levels) / $(count skills) ))%"</span>
-            </div>
-            <motion.div
-              className="text-hacker-green-light ml-4"
-              animate={{ opacity: [0.7, 1, 0.7] }}
-              transition={{ duration: 2, repeat: Infinity }}
-            >
-              Average proficiency: {Math.round(skills.reduce((acc, skill) => acc + skill.level, 0) / skills.length)}%
-            </motion.div>
-          </div>
-        </motion.div> */}
       </div>
     </SectionWrapper>
   );

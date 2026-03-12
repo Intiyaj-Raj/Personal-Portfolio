@@ -118,22 +118,22 @@ export const certifications: Certification[] = [
     imageUrl: mrEngineerOctanet,
   },
 ]
-
 export const skills: Skill[] = [
   { name: 'HTML5', level: 95, category: 'Frontend', icon: '🌐' },
   { name: 'CSS3', level: 93, category: 'Frontend', icon: '🎨' },
   { name: 'JavaScript', level: 96, category: 'Frontend', icon: '⚡' },
   { name: 'TypeScript', level: 92, category: 'Frontend', icon: '📘' },
   { name: 'React.js', level: 94, category: 'Frontend', icon: '⚛️' },
-  // { name: 'Vue.js', level: 87, category: 'Frontend', icon: '💚' },
+
   { name: 'Node.js', level: 90, category: 'Backend', icon: '🟢' },
   { name: 'Express.js', level: 89, category: 'Backend', icon: '🚀' },
-  // { name: 'Python', level: 85, category: 'Backend', icon: '🐍' },
+
   { name: 'PostgreSQL', level: 88, category: 'Database', icon: '🐘' },
   { name: 'MongoDB', level: 82, category: 'Database', icon: '🍃' },
-  // { name: 'Redis', level: 80, category: 'Database', icon: '🔴' },
-  { name: 'Git', level: 94, category: 'Tools', icon: '📝' }
-  // { name: 'Docker', level: 83, category: 'DevOps', icon: '🐳' },
-  // { name: 'AWS', level: 78, category: 'Cloud', icon: '☁️' },
-  // { name: 'Linux', level: 87, category: 'System', icon: '🐧' },
+
+  // Tools
+  { name: 'Git', level: 94, category: 'Tools', icon: '📝' },
+  { name: 'GitHub', level: 92, category: 'Tools', icon: '🐙' },
+  { name: 'VS Code', level: 95, category: 'Tools', icon: '💻' },
+  { name: 'Netlify', level: 90, category: 'Tools', icon: '🚀' }
 ];
