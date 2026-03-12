@@ -153,7 +153,7 @@ const Contact: React.FC = () => {
 
           {/* CONTACT FORM */}
 
-          <div className="bg-black border border-green-400/30 rounded-lg p-8">
+          <div className="bg-black border border-green-400/30 rounded-tr-[20px] rounded-bl-[20px] -tr-[30px] rounded-tr-[20px] rounded-bl-[20px] -bl-[30px] p-8">
 
             <h3 className="text-2xl font-mono text-green-400 mb-6">
               Get in Touch
@@ -161,7 +161,7 @@ const Contact: React.FC = () => {
 
             {submitStatus === 'success' && (
 
-              <div className="mb-6 p-4 bg-green-500/10 border border-green-500 rounded flex items-center space-x-2">
+              <div className="mb-6 p-4 bg-green-500/10 border border-green-500  rounded-tr-[20px] rounded-bl-[20px]  flex items-center space-x-2">
 
                 <CheckCircle className="w-5 h-5 text-green-500" />
 
@@ -175,7 +175,7 @@ const Contact: React.FC = () => {
 
             {submitStatus === 'error' && (
 
-              <div className="mb-6 p-4 bg-red-500/10 border border-red-500 rounded flex items-center space-x-2">
+              <div className="mb-6 p-4 bg-red-500/10 border border-red-500 rounded-tr-[20px] rounded-bl-[20px]  flex items-center space-x-2">
 
                 <AlertCircle className="w-5 h-5 text-red-500" />
 
@@ -195,7 +195,7 @@ const Contact: React.FC = () => {
                 value={formData.name}
                 onChange={handleInputChange}
                 placeholder="Your Name"
-                className="w-full bg-black border border-green-400/50 rounded px-4 py-3 text-green-400 font-mono"
+                className="w-full bg-black border border-green-400/50 rounded-tr-[20px] rounded-bl-[20px]  px-4 py-3 text-green-400 font-mono"
               />
 
               <input
@@ -204,7 +204,7 @@ const Contact: React.FC = () => {
                 value={formData.email}
                 onChange={handleInputChange}
                 placeholder="Your Email"
-                className="w-full bg-black border border-green-400/50 rounded px-4 py-3 text-green-400 font-mono"
+                className="w-full bg-black border border-green-400/50 rounded-tr-[20px] rounded-bl-[20px]  px-4 py-3 text-green-400 font-mono"
               />
 
               <input
@@ -213,7 +213,7 @@ const Contact: React.FC = () => {
                 value={formData.phone}
                 onChange={handleInputChange}
                 placeholder="Phone Number"
-                className="w-full bg-black border border-green-400/50 rounded px-4 py-3 text-green-400 font-mono"
+                className="w-full bg-black border border-green-400/50 rounded-tr-[20px] rounded-bl-[20px]  px-4 py-3 text-green-400 font-mono"
               />
 
               <textarea
@@ -222,13 +222,13 @@ const Contact: React.FC = () => {
                 onChange={handleInputChange}
                 rows={5}
                 placeholder="Your Message"
-                className="w-full bg-black border border-green-400/50 rounded px-4 py-3 text-green-400 font-mono"
+                className="w-full bg-black border border-green-400/50 rounded-tr-[20px] rounded-bl-[20px]  px-4 py-3 text-green-400 font-mono"
               />
 
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full border-2 border-green-400 text-green-400 font-mono py-3 rounded hover:bg-green-400 hover:text-black transition"
+                className="w-full border-2 border-green-400 text-green-400 font-mono py-3 rounded-tr-[20px] rounded-bl-[20px]  hover:bg-green-400 hover:text-black transition"
               >
 
                 {isSubmitting ? "Sending..." : "SEND MESSAGE"}
@@ -250,7 +250,7 @@ const Contact: React.FC = () => {
                 href={social.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-between p-4 border border-green-400/30 rounded hover:bg-green-400/10 transition"
+                className="flex items-center justify-between p-4 border border-green-400/30 rounded-tr-[20px] rounded-bl-[20px]  hover:bg-green-400/10 transition"
               >
 
                 <div className="flex items-center gap-3">
