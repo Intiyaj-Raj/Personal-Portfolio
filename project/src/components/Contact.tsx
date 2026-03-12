@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Send, Mail, Github, Linkedin, Twitter, CheckCircle, AlertCircle } from 'lucide-react';
+import { Send, Mail, Github, Linkedin, Twitter, CheckCircle, AlertCircle, Phone } from 'lucide-react';
 import SectionWrapper from './SectionWrapper';
 import type { ContactForm } from '../types';
 
@@ -96,6 +96,12 @@ const Contact: React.FC = () => {
       href: 'https://mail.google.com/mail/?view=cm&fs=1&to=intiyajraj786@gmail.com',
       label: 'Email',
       username: 'intiyajraj786@gmail.com'
+    },
+    {
+      icon: Phone,
+      href: 'tel:9117392461',
+      label: 'Contact Me',
+      username: '+91 9117392461'
     },
   ];
 
