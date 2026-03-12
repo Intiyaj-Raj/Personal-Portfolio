@@ -7,7 +7,7 @@ import LoadingSpinner from './components/LoadingSpinner';
 import Navbar from './components/Navbar';
 import MatrixRain from './components/MatrixRain';
 import CursorTrail from './components/CursorTrail';
-import ClickEffect from './components/ClickEffect';
+import SimpleClickPopup from './components/SimpleClickPopup';
 import ParticleEffect from './components/ParticleEffect';
 
 // Lazy load components
@@ -47,17 +47,16 @@ function App() {
                     <MatrixRain />
                     <CursorTrail />
                     <ParticleEffect x={0} y={0} />
-
+                    <SimpleClickPopup />
                     <motion.div
                         className="relative z-10"
                         animate={isShaking ? {
-                            x: [0, -12, 12, -6, 6, -3, 0],
-                            y: [0, 8, -8, 4, -4, 0],
-                            transition: { duration: 0.4 }
+                            x: [0, -15, 15, -8, 8, -4, 0],
+                            y: [0, 10, -10, 5, -5, 0],
+                            transition: { duration: 0.5 }
                         } : {}}
                         onAnimationComplete={() => setIsShaking(false)}
                     >
-                        <ClickEffect onClick={handleShake} />
                         <Navbar />
 
                         <main>

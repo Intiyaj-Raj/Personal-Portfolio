@@ -186,7 +186,10 @@ const Hero: React.FC = () => {
               className="px-8 py-4 border-2 border-hacker-green text-hacker-green font-mono text-lg hover:bg-hacker-green hover:text-black transition-all duration-300 relative group overflow-hidden"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              onClick={scrollToAbout}
+              onClick={(e) => {
+                e.stopPropagation();
+                scrollToAbout();
+              }}
             >
               <span className="relative z-10">{'[EXPLORE_PORTFOLIO]'}</span>
               <motion.div
@@ -214,7 +217,10 @@ const Hero: React.FC = () => {
           >
             <ChevronDown
               className="w-10 h-10 text-hacker-green cursor-pointer hover:text-hacker-green-light transition-colors"
-              onClick={scrollToAbout}
+              onClick={(e) => {
+                e.stopPropagation();
+                scrollToAbout();
+              }}
             />
           </motion.div>
         </motion.div>

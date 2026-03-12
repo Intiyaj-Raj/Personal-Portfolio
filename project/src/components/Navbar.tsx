@@ -121,7 +121,10 @@ const Navbar: React.FC = () => {
             {navItems.map((item) => (
               <motion.button
                 key={item.id}
-                onClick={() => scrollToSection(item.id)}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  scrollToSection(item.id);
+                }}
                 className={`relative px-4 py-2 font-mono text-sm tracking-wider transition-all duration-300 group ${activeSection === item.id
                   ? 'text-hacker-green-light'
                   : 'text-hacker-green hover:text-hacker-green-light'

@@ -16,11 +16,12 @@ export const useClickPopup = (): UseClickPopupReturn => {
     const [popups, setPopups] = useState<Popup[]>([]);
     const [clickCount, setClickCount] = useState(0);
 
-    const texts = ['INTIYAJ', 'DEBUGGING...', 'Mr. Engineer'];
+    const texts = ['INTIYAJ', 'DEBUGGING', 'MR.ENGINEER'];
 
     const createPopup = useCallback((x: number, y: number) => {
         const newClickCount = clickCount + 1;
-        const text = texts[(newClickCount - 1) % texts.length];
+        const textIndex = (clickCount % texts.length);
+        const text = texts[textIndex];
         const popup: Popup = {
             id: Date.now() + Math.random(),
             x,
