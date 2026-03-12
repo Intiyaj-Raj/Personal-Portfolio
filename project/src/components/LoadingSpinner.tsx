@@ -6,7 +6,7 @@ const Portfolio: React.FC = () => {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-black px-4">
       <h2 className="text-hacker-green text-center text-xl md:text-2xl lg:text-3xl">
-        🌟 Mera Portfolio Content Yahan Hai 🌟
+        🌟 My portfolio content is here.. 🌟
       </h2>
       {/* Tumhara portfolio ka actual content yahan add karo */}
     </div>

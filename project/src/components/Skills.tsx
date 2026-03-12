@@ -35,7 +35,7 @@ const Skills: React.FC = () => {
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
               transition={{ duration: 0.7, delay: categoryIndex * 0.1 }}
               viewport={{ once: false, amount: 0.3 }}
-              className="bg-black/70 border border-hacker-green/30 p-6 rounded-lg backdrop-blur-sm hover:border-hacker-green/80 transition-all duration-300 group"
+              className="bg-black/70 border border-hacker-green/30 p-6 rounded-tr-[10px] rounded-bl-[10px]  backdrop-blur-sm hover:border-hacker-green/80 transition-all duration-300 group"
               whileHover={{
                 boxShadow: '0 0 40px rgba(0, 255, 65, 0.3)',
                 scale: 1.02,
@@ -103,7 +103,7 @@ const Skills: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
           viewport={{ once: false, amount: 0.5 }}
-          className="mt-16 bg-black/80 border border-hacker-green/30 rounded-lg p-6 backdrop-blur-sm"
+          className="mt-16 bg-black/80 border border-hacker-green/30 rounded-tr-[10px] rounded-bl-[10px]  p-6 backdrop-blur-sm"
         >
           <div className="font-mono text-hacker-green text-sm">
             <div className="flex items-center space-x-2 mb-2">

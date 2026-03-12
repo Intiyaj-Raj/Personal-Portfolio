@@ -60,7 +60,7 @@ const Footer: React.FC = () => {
           viewport={{ once: false, amount: 0.5 }}
           className="text-center"
         >
-          <div className="bg-black/90 border border-hacker-green/40 rounded-lg p-8 inline-block backdrop-blur-sm max-w-2xl">
+          <div className="bg-black/90 border border-hacker-green/40 rounded-tr-[15px] rounded-bl-[15px] p-8 inline-block backdrop-blur-sm max-w-2xl">
             <div className="flex items-center justify-center mb-4">
               <Terminal className="w-6 h-6 text-hacker-green mr-2" />
               <span className="font-mono text-hacker-green text-sm">SYSTEM_STATUS: ONLINE</span>

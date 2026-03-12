@@ -53,7 +53,7 @@ const SimpleClickPopup: React.FC = () => {
 
             setTimeout(() => {
                 setPopups((prev) => prev.filter((p) => p.id !== popup.id));
-            }, 1200);
+            }, 1000);
         };
 
         document.addEventListener("click", handleClick);

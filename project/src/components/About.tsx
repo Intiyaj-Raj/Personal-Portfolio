@@ -8,7 +8,7 @@ import fullStackDeveloperImg from '../assets/full_stack_developer.webp'
 const About: React.FC = () => {
   const highlights = [
     { icon: Code, title: 'Frontend Mastery', desc: 'React, JavaScript, Modern CSS' },
-    { icon: Server, title: 'Backend Architecture', desc: 'Node.js, Python, Microservices' },
+    { icon: Server, title: 'Backend Architecture', desc: 'Node.js' },
     { icon: Database, title: 'Database Design', desc: 'PostgreSQL, MongoDB, Redis' },
     { icon: Globe, title: 'Full-Stack Solutions', desc: 'End-to-end Development' },
   ];
@@ -121,7 +121,7 @@ const About: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
               viewport={{ once: false, amount: 0.3 }}
-              className="bg-black/70 border border-hacker-green/30 p-8 rounded-lg backdrop-blur-sm hover:border-hacker-green/60 transition-all duration-300"
+              className="bg-black/70 border border-hacker-green/30 p-8 rounded-tr-[10px] rounded-bl-[10px]  backdrop-blur-sm hover:border-hacker-green/60 transition-all duration-300"
             >
               <h3 className="text-2xl font-mono text-hacker-green mb-6">
                 personal_detail
@@ -148,7 +148,7 @@ const About: React.FC = () => {
                   whileInView={{ opacity: 1, y: 0, scale: 1 }}
                   transition={{ duration: 0.6, delay: 0.6 + (index * 0.1) }}
                   viewport={{ once: false, amount: 0.3 }}
-                  className="bg-black/50 border border-hacker-green/20 p-4 rounded-lg backdrop-blur-sm hover:border-hacker-green/50 transition-all duration-300 group"
+                  className="bg-black/50 border border-hacker-green/20 p-4 rounded-tr-[10px] rounded-bl-[10px]  backdrop-blur-sm hover:border-hacker-green/50 transition-all duration-300 group"
                   whileHover={{
                     scale: 1.02,
                     boxShadow: '0 0 25px rgba(0, 255, 65, 0.3)',

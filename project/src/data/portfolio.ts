@@ -131,9 +131,9 @@ export const skills: Skill[] = [
   // { name: 'Python', level: 85, category: 'Backend', icon: '🐍' },
   { name: 'PostgreSQL', level: 88, category: 'Database', icon: '🐘' },
   { name: 'MongoDB', level: 82, category: 'Database', icon: '🍃' },
-  { name: 'Redis', level: 80, category: 'Database', icon: '🔴' },
-  { name: 'Git', level: 94, category: 'Tools', icon: '📝' },
-  { name: 'Docker', level: 83, category: 'DevOps', icon: '🐳' },
-  { name: 'AWS', level: 78, category: 'Cloud', icon: '☁️' },
+  // { name: 'Redis', level: 80, category: 'Database', icon: '🔴' },
+  { name: 'Git', level: 94, category: 'Tools', icon: '📝' }
+  // { name: 'Docker', level: 83, category: 'DevOps', icon: '🐳' },
+  // { name: 'AWS', level: 78, category: 'Cloud', icon: '☁️' },
   // { name: 'Linux', level: 87, category: 'System', icon: '🐧' },
 ];

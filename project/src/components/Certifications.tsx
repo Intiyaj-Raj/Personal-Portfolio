@@ -45,7 +45,7 @@ const Certifications: React.FC = () => {
               onMouseEnter={() => setHoveredCard(cert.id)}
               onMouseLeave={() => setHoveredCard(null)}
             >
-              <div className="bg-black/80 border border-hacker-green/30 rounded-lg p-6 backdrop-blur-sm h-full hover:border-hacker-green/90 transition-all duration-300 relative overflow-hidden">
+              <div className="bg-black/80 border border-hacker-green/30 rounded-tr-[10px] rounded-bl-[10px] -lg p-6 backdrop-blur-sm h-full hover:border-hacker-green/90 transition-all duration-300 relative overflow-hidden">
 
                 {/* Animated background glow */}
                 <motion.div
@@ -63,7 +63,7 @@ const Certifications: React.FC = () => {
 
                 {/* Neon glow effect */}
                 <motion.div
-                  className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  className="absolute inset-0 rounded-tr-[10px] rounded-bl-[10px] -lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                   style={{
                     boxShadow: '0 0 50px rgba(0, 255, 65, 0.4), inset 0 0 50px rgba(0, 255, 65, 0.1)',
                   }}
@@ -115,7 +115,7 @@ const Certifications: React.FC = () => {
                   </p>
 
                   <div className="flex items-center justify-between">
-                    <span className="px-3 py-1 bg-hacker-green/10 border border-hacker-green/40 rounded text-hacker-green font-mono text-xs">
+                    <span className="px-3 py-1 bg-hacker-green/10 border border-hacker-green/40 rounded-tr-[10px] rounded-bl-[10px]  text-hacker-green font-mono text-xs">
                       VERIFIED
                     </span>
                   </div>

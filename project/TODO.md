@@ -1,1 +1,8 @@
-# Hacker Animation Implementation TODO&#10;&#10;## [x] Step 0: Create TODO.md&#10;## [x] Step 1: Create CursorTrail.tsx (mouse trails)&#10;## [x] Step 2: Create useClickPopup.ts (click state)&#10;## [x] Step 3: Create ClickEffect.tsx (shake + popup)&#10;## [x] Step 4: Edit App.tsx (integrate components)&#10;## [x] Step 5: Edit index.css (add styles)&#10;## [x] Step 6: Test & Complete
+# Bug Fixes TODO
+
+## [x] Step 1: Create this TODO.md
+## [x] Step 2: Fix ErrorBoundary.tsx (remove console.error, unused React import)
+## [x] Step 3: Fix GlobalClickHandler.tsx (remove console.logs)
+## [x] Step 4: Run lint check ✓ (no errors)
+## [ ] Step 5: Run dev server and test
+## [ ] Step 6: Mark complete

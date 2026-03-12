@@ -57,7 +57,7 @@ const Projects: React.FC = () => {
               >
                 {/* Front of card */}
                 <div
-                  className="absolute inset-0 w-full h-full bg-black/80 border border-hacker-green/30 rounded-lg overflow-hidden group"
+                  className="absolute inset-0 w-full h-full bg-black/80 border border-hacker-green/30 rounded-tr-[10px] rounded-bl-[10px]  overflow-hidden group"
                   style={{ backfaceVisibility: 'hidden' }}
                 >
                   <motion.div
@@ -82,7 +82,7 @@ const Projects: React.FC = () => {
                         transition={{ duration: 2, repeat: Infinity }}
                       />
                       {project.featured && (
-                        <div className="absolute top-4 right-4 px-2 py-1 bg-hacker-green text-black font-mono text-xs rounded">
+                        <div className="absolute top-4 right-4 px-2 py-1 bg-hacker-green text-black font-mono text-xs rounded-tr-[10px] rounded-bl-[10px] ">
                           FEATURED
                         </div>
                       )}
@@ -100,13 +100,13 @@ const Projects: React.FC = () => {
                         {project.technologies.slice(0, 4).map((tech: string) => (
                           <span
                             key={tech}
-                            className="px-2 py-1 bg-hacker-green/10 border border-hacker-green/30 rounded text-hacker-green font-mono text-xs hover:bg-hacker-green/20 transition-colors"
+                            className="px-2 py-1 bg-hacker-green/10 border border-hacker-green/30 rounded-tr-[10px] rounded-bl-[10px]  text-hacker-green font-mono text-xs hover:bg-hacker-green/20 transition-colors"
                           >
                             {tech}
                           </span>
                         ))}
                         {project.technologies.length > 4 && (
-                          <span className="px-2 py-1 bg-hacker-green/10 border border-hacker-green/30 rounded text-hacker-green font-mono text-xs">
+                          <span className="px-2 py-1 bg-hacker-green/10 border border-hacker-green/30 rounded-tr-[10px] rounded-bl-[10px]  text-hacker-green font-mono text-xs">
                             +{project.technologies.length - 4}
                           </span>
                         )}
@@ -127,7 +127,7 @@ const Projects: React.FC = () => {
 
                 {/* Back of card */}
                 <div
-                  className="absolute inset-0 w-full h-full bg-black/95 border border-hacker-green/60 rounded-lg p-6 backdrop-blur-sm overflow-hidden"
+                  className="absolute inset-0 w-full h-full bg-black/95 border border-hacker-green/60 rounded-tr-[10px] rounded-bl-[10px] p-6 backdrop-blur-sm overflow-hidden"
                   style={{ backfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}
                 >
                   <div className="flex flex-col h-full min-h-0">
@@ -152,7 +152,7 @@ const Projects: React.FC = () => {
                       {project.technologies.map((tech: string) => (
                         <span
                           key={tech}
-                          className="px-2 py-1 bg-hacker-green/15 border border-hacker-green/40 rounded text-hacker-green font-mono text-xs"
+                          className="px-2 py-1 bg-hacker-green/15 border border-hacker-green/40 rounded-tr-[5px] rounded-bl-[5px]  text-hacker-green font-mono text-xs"
                         >
                           {tech}
                         </span>
@@ -167,7 +167,7 @@ const Projects: React.FC = () => {
                         rel="noopener noreferrer"
                         className="flex items-center space-x-2 text-hacker-green hover:text-hacker-green-light 
                         transition-colors font-mono text-sm w-1/2 sm:w-40 md:w-48 lg:w-56 
-                        justify-center py-2 md:py-3 md:px-6 border border-hacker-green/50 rounded 
+                        justify-center py-2 md:py-3 md:px-6 border border-hacker-green/50 rounded-tr-[10px] rounded-bl-[10px]  
                         hover:border-hacker-green transition-all"
                         whileHover={{ scale: 1.05 }}
                         onClick={(e) => e.stopPropagation()}
@@ -182,7 +182,7 @@ const Projects: React.FC = () => {
                         rel="noopener noreferrer"
                         className="flex items-center space-x-2 text-hacker-green hover:text-hacker-green-light 
                         transition-colors font-mono text-sm w-1/2 sm:w-40 md:w-48 lg:w-56 
-                        justify-center py-2 md:py-3 md:px-6 border border-hacker-green/50 rounded 
+                        justify-center py-2 md:py-3 md:px-6 border border-hacker-green/50 rounded-tr-[10px] rounded-bl-[10px]  
                         hover:border-hacker-green transition-all"
                         whileHover={{ scale: 1.05 }}
                         onClick={(e) => e.stopPropagation()}
@@ -204,7 +204,7 @@ const Projects: React.FC = () => {
             href="https://github.com/Intiyaj-Raj?tab=repositories"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-6 py-3 md:px-8 md:py-4 border border-hacker-green text-hacker-green font-mono rounded-lg 
+            className="px-6 py-3 md:px-8 md:py-4 border border-hacker-green text-hacker-green font-mono rounded-tr-[10px] rounded-bl-[10px]  
             hover:bg-hacker-green/20 transition-colors flex items-center space-x-2"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
