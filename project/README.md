@@ -81,6 +81,13 @@ npm run preview
 npm run lint
 ```
 
+### 🐛 Recent Fixes (Fixed TS6133 Errors)
+- Removed unused `handleShake` callback in `App.tsx`
+- Fixed unused `Send` icon import and integrated `errors` state display in `Contact.tsx` contact form (added error messages and red borders for validation)
+- Marked unused error params as `_error`/`_errorInfo` in `ErrorBoundary.tsx`
+
+Contact form now shows real-time validation feedback on submit.
+
 ## 📂 Project Structure
 
 ```
