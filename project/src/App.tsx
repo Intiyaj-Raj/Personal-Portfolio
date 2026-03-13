@@ -1,4 +1,4 @@
-import { Suspense, lazy, useState, useEffect, useCallback } from 'react';
+import { Suspense, lazy, useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { HelmetProvider } from 'react-helmet-async';
 import SEOHead from './components/SEOHead';
@@ -28,11 +28,6 @@ function App() {
             setIsLoading(false);
         }, 1500);
         return () => clearTimeout(timer);
-    }, []);
-
-    const handleShake = useCallback(() => {
-        setIsShaking(true);
-        setTimeout(() => setIsShaking(false), 500);
     }, []);
 
     if (isLoading) {

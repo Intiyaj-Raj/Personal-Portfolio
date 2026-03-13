@@ -1,133 +1,113 @@
-import React, { useRef, useCallback, useEffect } from 'react';
+import React, { useRef, useEffect, useCallback } from "react";
 
-interface TrailChar {
+interface Particle {
     x: number;
     y: number;
-    char: string;
-    life: number;
     vx: number;
     vy: number;
+    life: number;
+    size: number;
 }
 
 const CursorTrail: React.FC = () => {
     const canvasRef = useRef<HTMLCanvasElement>(null);
+    const particlesRef = useRef<Particle[]>([]);
+    const mouseRef = useRef({ x: 0, y: 0 });
     const animationRef = useRef<number>(0);
-    const mousePosRef = useRef({ x: 0, y: 0 });
-    const trailsRef = useRef<TrailChar[]>([]);
-    const lastSpawnRef = useRef(0);
-    const mouseMovedRef = useRef(false);
 
-    const chars = '01#@$%';
+    const spawnParticles = () => {
+        const count = 4;
 
-    const getRandomChar = () => chars[Math.floor(Math.random() * chars.length)]!;
+        for (let i = 0; i < count; i++) {
+            particlesRef.current.push({
+                x: mouseRef.current.x,
+                y: mouseRef.current.y,
+                vx: (Math.random() - 0.5) * 2,
+                vy: (Math.random() - 0.5) * 2,
+                life: 1,
+                size: 2 + Math.random() * 3
+            });
+        }
+    };
 
-    const initializeTrail = useCallback(() => {
+    const handleMouseMove = useCallback((e: MouseEvent) => {
+        mouseRef.current = { x: e.clientX, y: e.clientY };
+        spawnParticles();
+    }, []);
+
+    useEffect(() => {
         const canvas = canvasRef.current!;
-        const ctx = canvas.getContext('2d')!;
-        let lastTime = 0;
+        const ctx = canvas.getContext("2d")!;
 
         const resize = () => {
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
         };
+
         resize();
-        window.addEventListener('resize', resize);
+        window.addEventListener("resize", resize);
+        document.addEventListener("mousemove", handleMouseMove);
 
-        const updateTrails = (currentTime: number) => {
-            // STRICTLY spawn only on recent mouse movement
-            if (mouseMovedRef.current && currentTime - lastSpawnRef.current > 50) { // Throttle 50ms
-                lastSpawnRef.current = currentTime;
-                mouseMovedRef.current = false; // Reset flag
-
-                // Spawn 2-4 chars ONLY at current mouse position
-                const count = 2 + Math.floor(Math.random() * 3);
-                for (let i = 0; i < count; i++) {
-                    trailsRef.current.push({
-                        x: mousePosRef.current.x + (Math.random() - 0.5) * 30,
-                        y: mousePosRef.current.y + (Math.random() - 0.5) * 30,
-                        char: getRandomChar(),
-                        life: 1.0,
-                        vx: (Math.random() - 0.5) * 80,
-                        vy: Math.random() * -40 - 10, // Always upward
-                    });
-                }
-            }
-
-            // Update & fade existing trails
-            trailsRef.current = trailsRef.current.filter(trail => {
-                trail.x += trail.vx * 0.016;
-                trail.y += trail.vy * 0.016;
-                trail.life -= 0.02;
-                return trail.life > 0;
-            });
-        };
-
-        const render = (time: number) => {
-            const dt = Math.min((time - lastTime) / 16.67, 0.1);
-            lastTime = time;
-
-            // Fade background
-            ctx.fillStyle = 'rgba(6, 6, 6, 0.25)';
+        const animate = () => {
+            ctx.fillStyle = "rgba(0,0,0,0.15)";
             ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-            // Setup glow text
-            ctx.font = 'bold 16px "JetBrains Mono", monospace';
-            ctx.textAlign = 'center';
-            ctx.textBaseline = 'middle';
-            ctx.shadowColor = '#FF0000';
-            ctx.shadowBlur = 0;
+            particlesRef.current.forEach((p, index) => {
+                p.x += p.vx;
+                p.y += p.vy;
 
-            // Draw trails with glow effect
-            trailsRef.current.forEach(trail => {
-                ctx.save();
-                ctx.globalAlpha = Math.pow(trail.life, 2); // Quadratic fade
-                ctx.shadowBlur = 20 * trail.life;
-                ctx.fillStyle = trail.life > 0.5 ? '#39f' : '#FF0';
-                ctx.fillText(trail.char, trail.x, trail.y);
-                ctx.shadowBlur = 8 * trail.life;
-                ctx.fillStyle = 'rgba(0, 255, 65, 0.4)';
-                ctx.fillText(trail.char, trail.x, trail.y);
-                ctx.restore();
+                p.vx *= 0.98;
+                p.vy *= 0.98;
+
+                p.life -= 0.02;
+
+                if (p.life <= 0) {
+                    particlesRef.current.splice(index, 1);
+                }
+
+                ctx.beginPath();
+                ctx.globalAlpha = p.life;
+                ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+
+                const gradient = ctx.createRadialGradient(
+                    p.x,
+                    p.y,
+                    0,
+                    p.x,
+                    p.y,
+                    p.size * 4
+                );
+
+                gradient.addColorStop(0, "#00ffff");
+                gradient.addColorStop(0.5, "#00FF00");
+                gradient.addColorStop(1, "transparent");
+
+                ctx.fillStyle = gradient;
+                ctx.fill();
             });
 
-            updateTrails(time);
-
-            // Limit trails to 50 max for perf
-            if (trailsRef.current.length > 50) {
-                trailsRef.current = trailsRef.current.slice(-50);
+            if (particlesRef.current.length > 120) {
+                particlesRef.current = particlesRef.current.slice(-120);
             }
 
-            animationRef.current = requestAnimationFrame(render);
+            animationRef.current = requestAnimationFrame(animate);
         };
 
-        animationRef.current = requestAnimationFrame(render);
+        animate();
+
         return () => {
-            window.removeEventListener('resize', resize);
-            if (animationRef.current) cancelAnimationFrame(animationRef.current);
+            window.removeEventListener("resize", resize);
+            document.removeEventListener("mousemove", handleMouseMove);
+            cancelAnimationFrame(animationRef.current);
         };
-    }, []);
-
-    const handleMouseMove = useCallback((e: MouseEvent) => {
-        mousePosRef.current = { x: e.clientX, y: e.clientY };
-        mouseMovedRef.current = true; // SET flag only on actual move
-    }, []);
-
-    useEffect(() => {
-        const cleanup = initializeTrail();
-        document.addEventListener('mousemove', handleMouseMove, { passive: true });
-        return () => {
-            cleanup();
-            document.removeEventListener('mousemove', handleMouseMove);
-        };
-    }, [initializeTrail, handleMouseMove]);
+    }, [handleMouseMove]);
 
     return (
         <canvas
             ref={canvasRef}
-            className="fixed inset-0 z-20 pointer-events-none select-none"
+            className="fixed inset-0 pointer-events-none z-20"
             style={{
-                mixBlendMode: 'screen',
-                filter: 'brightness(1.3) contrast(1.2) saturate(1.4)'
+                mixBlendMode: "screen"
             }}
         />
     );

@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useClickPopup } from '../hooks/useClickPopup';
-import type { Popup } from '../hooks/useClickPopup';
 
 const ClickEffect: React.FC = () => {
     const { popups } = useClickPopup();

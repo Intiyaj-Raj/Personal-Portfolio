@@ -78,7 +78,9 @@ const Navbar: React.FC = () => {
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className={`fixed top-0 w-full z-50 ${isScrolled ? "bg-black border-b border-hacker-green/30" : "bg-black"
+      className={`fixed top-0 w-full z-50 ${isScrolled
+        ? "bg-black border-b border-hacker-green/30"
+        : "bg-black"
         }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
@@ -108,16 +110,19 @@ const Navbar: React.FC = () => {
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-6">
             {navItems.map((item) => (
-              <button
+              <motion.button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`font-mono ${activeSection === item.id
-                    ? "text-hacker-green-light"
-                    : "text-hacker-green"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
+                className={`font-mono px-3 py-1 rounded-md transition-all duration-300
+                ${activeSection === item.id
+                    ? "text-hacker-green-light border-b border-hacker-green"
+                    : "text-hacker-green hover:text-hacker-green-light hover:bg-hacker-green/10 hover:shadow-[0_0_10px_#00ff9c]"
                   }`}
               >
                 [{item.label}]
-              </button>
+              </motion.button>
             ))}
           </div>
 
@@ -147,9 +152,10 @@ const Navbar: React.FC = () => {
           <button
             key={item.id}
             onClick={() => scrollToSection(item.id)}
-            className={`block w-full text-left px-4 py-4 font-mono ${activeSection === item.id
+            className={`block w-full text-left px-4 py-4 font-mono transition-all duration-300
+            ${activeSection === item.id
                 ? "text-hacker-green-light bg-hacker-green/10 border-l-4 border-hacker-green"
-                : "text-hacker-green"
+                : "text-hacker-green hover:bg-hacker-green/10 hover:pl-6"
               }`}
           >
             [{item.label}]
