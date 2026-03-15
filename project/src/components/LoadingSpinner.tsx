@@ -57,7 +57,7 @@ const LoadingSpinner: React.FC = () => {
     return (
       <div className="min-h-screen flex items-center justify-center bg-black px-4">
         <h1 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-hacker-green text-center">
-          {">"} Welcome to my Portfolio.....
+          {">"} Welcome to my World.....
         </h1>
       </div>
     );

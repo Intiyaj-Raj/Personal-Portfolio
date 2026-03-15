@@ -9,7 +9,7 @@ const About: React.FC = () => {
   const highlights = [
     { icon: Code, title: 'Frontend Mastery', desc: 'React, JavaScript, Modern CSS' },
     { icon: Server, title: 'Backend Architecture', desc: 'Node.js' },
-    { icon: Database, title: 'Database Design', desc: 'PostgreSQL, MongoDB, Redis' },
+    { icon: Database, title: 'Database Design', desc: 'PostgreSQL, MongoDB' },
     { icon: Globe, title: 'Full-Stack Solutions', desc: 'End-to-end Development' },
   ];
 
@@ -128,13 +128,19 @@ const About: React.FC = () => {
               </h3>
               <div className="space-y-4 text-gray-300 font-mono text-sm leading-relaxed text-justify">
                 <p>
-                  Hello, I am INTIYAJ Ansari also known as Mr. Engineer, a Full Stack Developer.
-                  I enjoy making websites and apps that are modern, sharp and user friendly.
-                  As a full stack developer, I work on both front-end and back-end to convert ideas into real projects.
+                  Hi! I’m <strong>Intiyaj Ansari</strong> from a <strong>small village</strong> and a <strong>farmer family</strong>. Since childhood, I have been curious about <strong>computers and the internet</strong>. This curiosity led me to choose <strong>Computer Science Engineering</strong> in college so I could learn how websites and apps are built.
                 </p>
+
                 <p>
-                  My focus is on clean design, smooth performance and reliable solutions that help businesses grow online.
-                  Obtain user-friendly web solutions that support the expansion of your company.
+                  At the beginning, programming was difficult for me, but I kept learning step by step through practice and tutorials. I started with <strong>HTML, CSS, and JavaScript</strong> and slowly moved to the <strong>MERN Stack (MongoDB, Express.js, React, Node.js)</strong>.
+                </p>
+
+                <p>
+                  To improve my skills, I built projects like a <strong>Netflix Clone</strong>, an <strong>Office Clone</strong>, and my <strong>Portfolio Website</strong>. These projects helped me learn problem-solving and gain confidence in development.
+                </p>
+
+                <p>
+                  Coming from a farmer family taught me <strong>hard work, patience, and consistency</strong>. My goal is to grow as a <strong>MERN Stack Developer</strong> and build useful web applications that help people.
                 </p>
               </div>
             </motion.div>
