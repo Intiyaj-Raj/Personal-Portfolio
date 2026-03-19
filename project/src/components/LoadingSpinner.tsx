@@ -27,7 +27,7 @@ const LoadingSpinner: React.FC = () => {
   useEffect(() => {
     if (step === "welcome") {
       // Step 2: Welcome message (2 second)
-      const timer2 = setTimeout(() => setStep("portfolio"), 2000);
+      const timer2 = setTimeout(() => setStep("portfolio"), 4000);
       return () => clearTimeout(timer2);
     }
   }, [step]);

@@ -128,19 +128,15 @@ const About: React.FC = () => {
               </h3>
               <div className="space-y-4 text-gray-300 font-mono text-sm leading-relaxed text-justify">
                 <p>
-                  Hi! I’m <strong>Intiyaj Ansari</strong> from a <strong>small village</strong> and a <strong>farmer family</strong>. Since childhood, I have been curious about <strong>computers and the internet</strong>. This curiosity led me to choose <strong>Computer Science Engineering</strong> in college so I could learn how websites and apps are built.
+                  Hi! I’m <strong>Intiyaj Ansari</strong>, a <strong>Full Stack Developer</strong> skilled in the <strong>MERN Stack</strong>. I build modern and responsive web applications using HTML, CSS, JavaScript, React, Node.js, Express, and MongoDB.
                 </p>
 
                 <p>
-                  At the beginning, programming was difficult for me, but I kept learning step by step through practice and tutorials. I started with <strong>HTML, CSS, and JavaScript</strong> and slowly moved to the <strong>MERN Stack (MongoDB, Express.js, React, Node.js)</strong>.
+                  I have created projects like an <strong>E-commerce Website</strong>, <strong>Sweet Shop Website</strong>, <strong>Online Learning Platform</strong>, <strong>Netflix Clone</strong>, and my <strong>Portfolio Website</strong>.
                 </p>
 
                 <p>
-                  To improve my skills, I built projects like a <strong>Netflix Clone</strong>, an <strong>Office Clone</strong>, and my <strong>Portfolio Website</strong>. These projects helped me learn problem-solving and gain confidence in development.
-                </p>
-
-                <p>
-                  Coming from a farmer family taught me <strong>hard work, patience, and consistency</strong>. My goal is to grow as a <strong>MERN Stack Developer</strong> and build useful web applications that help people.
+                  I enjoy learning new technologies and aim to build impactful web applications.
                 </p>
               </div>
             </motion.div>

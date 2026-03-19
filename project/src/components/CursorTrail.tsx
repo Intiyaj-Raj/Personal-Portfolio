@@ -14,6 +14,7 @@ const CursorTrail: React.FC = () => {
     const particlesRef = useRef<Particle[]>([]);
     const mouseRef = useRef({ x: 0, y: 0 });
     const animationRef = useRef<number>(0);
+    const timeoutRef = useRef<number | null>(null);
 
     const spawnParticles = () => {
         const count = 4;
@@ -33,6 +34,16 @@ const CursorTrail: React.FC = () => {
     const handleMouseMove = useCallback((e: MouseEvent) => {
         mouseRef.current = { x: e.clientX, y: e.clientY };
         spawnParticles();
+
+        // clear previous timeout
+        if (timeoutRef.current) {
+            clearTimeout(timeoutRef.current);
+        }
+
+        // stop effect when mouse stops
+        timeoutRef.current = window.setTimeout(() => {
+            particlesRef.current = [];
+        }, 50);
     }, []);
 
     useEffect(() => {
@@ -49,8 +60,7 @@ const CursorTrail: React.FC = () => {
         document.addEventListener("mousemove", handleMouseMove);
 
         const animate = () => {
-            ctx.fillStyle = "rgba(0,0,0,0.15)";
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
 
             particlesRef.current.forEach((p, index) => {
                 p.x += p.vx;
@@ -63,6 +73,7 @@ const CursorTrail: React.FC = () => {
 
                 if (p.life <= 0) {
                     particlesRef.current.splice(index, 1);
+                    return;
                 }
 
                 ctx.beginPath();
@@ -85,6 +96,8 @@ const CursorTrail: React.FC = () => {
                 ctx.fillStyle = gradient;
                 ctx.fill();
             });
+
+            ctx.globalAlpha = 1;
 
             if (particlesRef.current.length > 120) {
                 particlesRef.current = particlesRef.current.slice(-120);
