@@ -8,6 +8,12 @@ export default {
         'visible': 'visible',
       },
       colors: {
+        'portfolio-green': '#00ff00',
+        'portfolio-green-dark': '#00cc00',
+        'portfolio-dark': '#000000',
+        'portfolio-gray': '#111111',
+        'portfolio-light-gray': '#222222',
+        'portfolio-text': '#cccccc',
         'hacker-green': '#00ff41',
         'hacker-green-light': '#39ff14',
         'hacker-dark': '#0a0a0a',
@@ -15,6 +21,7 @@ export default {
         'terminal-green': '#00cc33',
       },
       fontFamily: {
+        'poppins': ['Poppins', 'sans-serif'],
         'mono': ['JetBrains Mono', 'Fira Code', 'monospace'],
       },
       animation: {

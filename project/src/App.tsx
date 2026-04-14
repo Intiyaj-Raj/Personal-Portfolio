@@ -9,6 +9,7 @@ import MatrixRain from './components/MatrixRain';
 import CursorTrail from './components/CursorTrail';
 import SimpleClickPopup from './components/SimpleClickPopup';
 import ParticleEffect from './components/ParticleEffect';
+import FireBurstClick from './components/FireBurstClick';
 
 // Lazy load components
 const Hero = lazy(() => import('./components/Hero'));
@@ -43,6 +44,7 @@ function App() {
                     <CursorTrail />
                     <ParticleEffect x={0} y={0} />
                     <SimpleClickPopup />
+                    <FireBurstClick />
                     <motion.div
                         className="relative z-10"
                         animate={isShaking ? {
