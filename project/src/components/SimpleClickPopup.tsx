@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 let clickCount = 0;
 
-const texts = ["INTIYAJ", "DEBUGGING", "MR.ENGINEER"];
+const texts = ["INTIYAJ", "MR.ENGINEER"];
 
 interface Popup {
     id: number;
@@ -53,7 +53,7 @@ const SimpleClickPopup: React.FC = () => {
 
             setTimeout(() => {
                 setPopups((prev) => prev.filter((p) => p.id !== popup.id));
-            }, 1000);
+            }, 1500);
         };
 
         document.addEventListener("click", handleClick);

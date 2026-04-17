@@ -12,9 +12,9 @@ const FireBurstClick: React.FC<FireBurstClickProps> = ({ className = '' }) => {
         burst.style.top = `${y - 30}px`;
 
         // Center fire
-        const centerFire = document.createElement('div');
-        centerFire.className = 'fire-center absolute top-1/2 left-1/2 w-[20px] h-[20px] bg-gradient-radial from-yellow-400 via-orange-500 to-red-500 rounded-full -translate-x-1/2 -translate-y-1/2 animate-fire-center shadow-[0_0_20px_#ff6600,0_0_40px_#ff4400,0_0_60px_#ff0000]';
-        burst.appendChild(centerFire);
+        // const centerFire = document.createElement('div');
+        // centerFire.className = 'fire-center absolute top-1/2 left-1/2 w-[20px] h-[20px] bg-gradient-radial from-yellow-400 via-orange-500 to-red-500 rounded-full -translate-x-1/2 -translate-y-1/2 animate-fire-center shadow-[0_0_20px_#ff6600,0_0_40px_#ff4400,0_0_60px_#ff0000]';
+        // burst.appendChild(centerFire);
 
         // Particles
         for (let i = 0; i < 12; i++) {
