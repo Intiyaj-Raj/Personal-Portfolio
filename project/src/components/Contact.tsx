@@ -84,7 +84,7 @@ const Contact: React.FC = () => {
           <div className="w-32 h-1 bg-hacker-green mx-auto" />
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
 
           {/* CONTACT FORM */}
           <div className="bg-black border border-hacker-green/30 rounded-tr-[10px] rounded-bl-[10px] p-8">
