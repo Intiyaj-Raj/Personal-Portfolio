@@ -51,10 +51,10 @@ const Contact: React.FC = () => {
         setFormData({ name: '', email: '', phone: '', message: '' });
       } else setSubmitStatus("error");
 
-      setTimeout(() => setSubmitStatus("idle"), 3000);
+      setTimeout(() => setSubmitStatus("idle"), 1500);
     } catch {
       setSubmitStatus("error");
-      setTimeout(() => setSubmitStatus("idle"), 3000);
+      setTimeout(() => setSubmitStatus("idle"), 2000);
     } finally {
       setIsSubmitting(false);
     }
