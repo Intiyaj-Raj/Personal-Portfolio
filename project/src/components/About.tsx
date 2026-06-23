@@ -1,16 +1,24 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Code, Database, Globe, Server } from 'lucide-react';
-import SectionWrapper from './SectionWrapper';
-import SEOHead from './SEOHead';  // 👈 SEOHead ko import kiya
-import fullStackDeveloperImg from '../assets/full_stack_developer.webp'
+import React from "react";
+import { motion } from "framer-motion";
+import { Code, Database, Globe, Server } from "lucide-react";
+import SectionWrapper from "./SectionWrapper";
+import SEOHead from "./SEOHead";
+import fullStackDeveloperImg from "../assets/full_stack_developer.webp";
 
 const About: React.FC = () => {
   const highlights = [
-    { icon: Code, title: 'Frontend Mastery', desc: 'React, JavaScript, Modern CSS' },
-    { icon: Server, title: 'Backend Architecture', desc: 'Node.js' },
-    { icon: Database, title: 'Database Design', desc: 'PostgreSQL, MongoDB' },
-    { icon: Globe, title: 'Full-Stack Solutions', desc: 'End-to-end Development' },
+    {
+      icon: Code,
+      title: "Frontend Mastery",
+      desc: "React, JavaScript, Modern CSS",
+    },
+    { icon: Server, title: "Backend Architecture", desc: "Node.js" },
+    { icon: Database, title: "Database Design", desc: "PostgreSQL, MongoDB" },
+    {
+      icon: Globe,
+      title: "Full-Stack Solutions",
+      desc: "End-to-end Development",
+    },
   ];
 
   return (
@@ -39,7 +47,7 @@ const About: React.FC = () => {
           className="text-center mb-20"
         >
           <h2 className="text-4xl md:text-7xl font-mono font-bold mb-5 glitch-text text-hacker-green">
-            {'>'} ABOUT_ME
+            {">"} ABOUT_ME
           </h2>
           <div className="w-32 h-1 bg-hacker-green mx-auto" />
         </motion.div>
@@ -58,19 +66,19 @@ const About: React.FC = () => {
                 className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-hacker-green relative"
                 animate={{
                   boxShadow: [
-                    '0 0 40px rgba(0, 255, 65, 0.6)',
-                    '0 0 80px rgba(0, 255, 65, 1)',
-                    '0 0 40px rgba(0, 255, 65, 0.6)',
+                    "0 0 40px rgba(0, 255, 65, 0.6)",
+                    "0 0 80px rgba(0, 255, 65, 1)",
+                    "0 0 40px rgba(0, 255, 65, 0.6)",
                   ],
                 }}
                 transition={{
                   duration: 3,
                   repeat: Infinity,
-                  ease: 'easeInOut',
+                  ease: "easeInOut",
                 }}
                 whileHover={{
                   scale: 1.05,
-                  boxShadow: '0 0 100px rgba(0, 255, 65, 1)',
+                  boxShadow: "0 0 100px rgba(0, 255, 65, 1)",
                 }}
               >
                 <img
@@ -90,19 +98,21 @@ const About: React.FC = () => {
               <motion.div
                 className="absolute inset-0 w-full h-full rounded-full border-2 border-transparent"
                 style={{
-                  background: 'linear-gradient(45deg, rgba(0,255,65,0.1), transparent, transparent)',
-                  backgroundSize: '200% 200%',
+                  background:
+                    "linear-gradient(45deg, rgba(0,255,65,0.1), transparent, transparent)",
+                  backgroundSize: "200% 200%",
                 }}
                 animate={{ rotate: 360 }}
-                transition={{ duration: 8, repeat: Infinity, ease: 'linear' }}
+                transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
               />
               <motion.div
                 className="absolute -inset-2 w-full h-full rounded-full border border-transparent"
                 style={{
-                  background: 'linear-gradient(45deg, rgba(0,255,65,0.1), transparent, transparent)',
+                  background:
+                    "linear-gradient(45deg, rgba(0,255,65,0.1), transparent, transparent)",
                 }}
                 animate={{ rotate: -360 }}
-                transition={{ duration: 12, repeat: Infinity, ease: 'linear' }}
+                transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
               />
             </div>
           </motion.div>
@@ -128,15 +138,24 @@ const About: React.FC = () => {
               </h3>
               <div className="space-y-4 text-gray-300 font-mono text-sm leading-relaxed text-justify">
                 <p>
-                  Hi! I’m <strong>Intiyaj Ansari</strong>, a <strong>Full Stack Developer</strong> skilled in the <strong>MERN Stack</strong>. I build modern and responsive web applications using HTML, CSS, JavaScript, React, Node.js, Express, and MongoDB.
+                  Hi! I’m <strong>Intiyaj Ansari</strong>, a{" "}
+                  <strong>Full Stack Developer</strong> skilled in the{" "}
+                  <strong>MERN Stack</strong>. I build modern and responsive web
+                  applications using HTML, CSS, JavaScript, React, Node.js,
+                  Express, and MongoDB.
                 </p>
 
                 <p>
-                  I have created projects like an <strong>E-commerce Website</strong>, <strong>Sweet Shop Website</strong>, <strong>Online Learning Platform</strong>, <strong>Netflix Clone</strong>, and my <strong>Portfolio Website</strong>.
+                  I have created projects like an{" "}
+                  <strong>E-commerce Website</strong>,{" "}
+                  <strong>ShopBag Online Shopping</strong>,{" "}
+                  <strong>Online Learning Platform</strong>,{" "}
+                  <strong>Nestivo (Airbnb) Website</strong>.
                 </p>
 
                 <p>
-                  I enjoy learning new technologies and aim to build impactful web applications.
+                  I enjoy learning new technologies and aim to build impactful
+                  web applications.
                 </p>
               </div>
             </motion.div>
@@ -148,19 +167,23 @@ const About: React.FC = () => {
                   key={index}
                   initial={{ opacity: 0, y: 20, scale: 0.9 }}
                   whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                  transition={{ duration: 0.6, delay: 0.6 + (index * 0.1) }}
+                  transition={{ duration: 0.6, delay: 0.6 + index * 0.1 }}
                   viewport={{ once: false, amount: 0.3 }}
-                  className="bg-black/50 border border-hacker-green/20 p-4 rounded-tr-[10px] rounded-bl-[10px]  backdrop-blur-sm hover:border-hacker-green/50 transition-all duration-300 group"
+                  className="bg-black/50 border border-hacker-green/20 p-4 rounded-tr-[10px] rounded-bl-[10px]  backdrop-blur-sm transition-all duration-300 group"
                   whileHover={{
                     scale: 1.02,
-                    boxShadow: '0 0 25px rgba(0, 255, 65, 0.3)',
+                    boxShadow: "0 0 25px rgba(0, 255, 65, 0.3)",
                   }}
                 >
                   <div className="flex items-center space-x-3">
                     <item.icon className="w-6 h-6 text-hacker-green group-hover:text-hacker-green-light transition-colors" />
                     <div>
-                      <h4 className="text-sm font-mono text-hacker-green mb-1">{item.title}</h4>
-                      <p className="text-gray-400 text-xs font-mono">{item.desc}</p>
+                      <h4 className="text-sm font-mono text-hacker-green mb-1">
+                        {item.title}
+                      </h4>
+                      <p className="text-gray-400 text-xs font-mono">
+                        {item.desc}
+                      </p>
                     </div>
                   </div>
                 </motion.div>

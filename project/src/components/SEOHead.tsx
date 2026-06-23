@@ -1,5 +1,5 @@
-import React from 'react';
-import { Helmet } from 'react-helmet-async';
+import React from "react";
+import { Helmet } from "react-helmet-async";
 
 interface SEOHeadProps {
   title?: string;
@@ -10,18 +10,19 @@ interface SEOHeadProps {
 }
 
 const SEOHead: React.FC<SEOHeadProps> = ({
-  title = 'Intiyaj Ansari – Full Stack Developer | Mr. Engineer Web Apps',
-  description = 'Intiyaj Ansari full stack developer, also known as Mr. Engineer, who creates secure, scalable, and easy-to-use web apps. Hire a skilled full stack developer.',
-  keywords = 'full stack developer, frontend developer, backend developer, web app developer, Mr. Engineer full stack developer, Intiyaj Ansari full stack developer, best full stack developer',
-  image = 'https://intiyajansarifullstackdeveloper.netlify.app/full-stack-developer-intiyaj-og.png',
-  url = 'https://intiyajansarifullstackdeveloper.netlify.app',
+  title = "Intiyaj Ansari – Full Stack Developer | Mr. Engineer Web Apps",
+  description = "Intiyaj Ansari full stack developer, also known as Mr. Engineer, who creates secure, scalable, and easy-to-use web apps. Hire a skilled full stack developer.",
+  keywords = "mern stack developer, full stack developer, frontend developer, backend developer, web app developer, Mr. Engineer full stack developer, Intiyaj Ansari full stack developer, best full stack developer",
+  image = "https://intiyajansarifullstackdeveloper.netlify.app/full-stack-developer-intiyaj-og.png",
+  url = "https://intiyajansarifullstackdeveloper.netlify.app",
 }) => {
   const structuredData = {
-    '@context': 'https://schema.org',
-    '@type': 'Person',
-    name: 'Intiyaj',
-    jobTitle: 'Full Stack Developer',
-    description: 'Intiyaj Ansari is also known as Mr. Engineer, is a full stack developer. He builds secure, scalable, and user-friendly web applications.',
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Intiyaj",
+    jobTitle: "Full Stack Developer",
+    description:
+      "Intiyaj Ansari is also known as Mr. Engineer, is a full stack developer. He builds secure, scalable, and user-friendly web applications.",
     url: url,
     image: image,
     sameAs: [
@@ -30,13 +31,13 @@ const SEOHead: React.FC<SEOHeadProps> = ({
       "https://x.com/intiyaj_91",
     ],
     knowsAbout: [
-      'JavaScript',
-      'TypeScript',
-      'React.js',
-      'Node.js',
-      'PostgreSQL',
-      'MongoDB',
-      'Web Development',
+      "JavaScript",
+      "TypeScript",
+      "React.js",
+      "Node.js",
+      "PostgreSQL",
+      "MongoDB",
+      "Web Development",
     ],
   };
 
@@ -77,14 +78,37 @@ const SEOHead: React.FC<SEOHeadProps> = ({
 
       {/* Favicons */}
       <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-      <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-      <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-      <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png" />
-      <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+      <link
+        rel="icon"
+        type="image/png"
+        sizes="16x16"
+        href="/favicon-16x16.png"
+      />
+      <link
+        rel="icon"
+        type="image/png"
+        sizes="32x32"
+        href="/favicon-32x32.png"
+      />
+      <link
+        rel="icon"
+        type="image/png"
+        sizes="192x192"
+        href="/favicon-192x192.png"
+      />
+      <link
+        rel="apple-touch-icon"
+        sizes="180x180"
+        href="/apple-touch-icon.png"
+      />
 
       {/* Preconnect for performance */}
       <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+      <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossOrigin="anonymous"
+      />
     </Helmet>
   );
 };

@@ -19,6 +19,15 @@ export interface Certification {
   description: string;
   imageUrl: string;
 }
+export interface Experience {
+  id: number;
+  title: string;
+  platform: string;
+  year: string;
+  issuer: string;
+  description: string;
+  imageUrl: string;
+}
 
 export interface Skill {
   name: string;
@@ -26,7 +35,6 @@ export interface Skill {
   category: string;
   icon: string;
 }
-
 
 export interface ContactForm {
   name: string;
