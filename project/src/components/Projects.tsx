@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Github, Eye, Code2 } from 'lucide-react';
-import SectionWrapper from './SectionWrapper';
-import { projects } from '../data/portfolio';
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import { Github, Eye, Code2 } from "lucide-react";
+import SectionWrapper from "./SectionWrapper";
+import { projects } from "../data/portfolio";
 
 const Projects: React.FC = () => {
   const [flippedCard, setFlippedCard] = useState<number | null>(null);
@@ -29,7 +29,7 @@ const Projects: React.FC = () => {
           className="text-center mb-20"
         >
           <h2 className="text-4xl md:text-7xl font-mono font-bold mb-6 glitch-text text-hacker-green">
-            {'>'} PROJECTS
+            {">"} PROJECTS
           </h2>
           <div className="w-32 h-1 bg-hacker-green mx-auto" />
         </motion.div>
@@ -52,17 +52,17 @@ const Projects: React.FC = () => {
               <motion.div
                 className="absolute inset-0 w-full h-full"
                 animate={{ rotateY: flippedCard === project.id ? 180 : 0 }}
-                transition={{ duration: 0.8, type: 'spring', stiffness: 100 }}
-                style={{ transformStyle: 'preserve-3d' }}
+                transition={{ duration: 0.8, type: "spring", stiffness: 100 }}
+                style={{ transformStyle: "preserve-3d" }}
               >
                 {/* Front of card */}
                 <div
                   className="absolute inset-0 w-full h-full bg-black/80 border border-hacker-green/30 rounded-tr-[10px] rounded-bl-[10px]  overflow-hidden group"
-                  style={{ backfaceVisibility: 'hidden' }}
+                  style={{ backfaceVisibility: "hidden" }}
                 >
                   <motion.div
                     className="h-full flex flex-col"
-                    whileHover={{ boxShadow: '0 0 40px rgba(0, 255, 65, 0.4)' }}
+                    whileHover={{ boxShadow: "0 0 40px rgba(0, 255, 65, 0.4)" }}
                   >
                     {/* Project Image */}
                     <div className="relative h-48 overflow-hidden">
@@ -97,14 +97,16 @@ const Projects: React.FC = () => {
                       </p>
 
                       <div className="flex flex-wrap gap-2 mt-4 mb-4">
-                        {project.technologies.slice(0, 4).map((tech: string) => (
-                          <span
-                            key={tech}
-                            className="px-2 py-1 bg-hacker-green/10 border border-hacker-green/30 rounded-tr-[10px] rounded-bl-[10px]  text-hacker-green font-mono text-xs hover:bg-hacker-green/20 transition-colors"
-                          >
-                            {tech}
-                          </span>
-                        ))}
+                        {project.technologies
+                          .slice(0, 4)
+                          .map((tech: string) => (
+                            <span
+                              key={tech}
+                              className="px-2 py-1 bg-hacker-green/10 border border-hacker-green/30 rounded-tr-[10px] rounded-bl-[10px]  text-hacker-green font-mono text-xs hover:bg-hacker-green/20 transition-colors"
+                            >
+                              {tech}
+                            </span>
+                          ))}
                         {project.technologies.length > 4 && (
                           <span className="px-2 py-1 bg-hacker-green/10 border border-hacker-green/30 rounded-tr-[10px] rounded-bl-[10px]  text-hacker-green font-mono text-xs">
                             +{project.technologies.length - 4}
@@ -128,7 +130,10 @@ const Projects: React.FC = () => {
                 {/* Back of card */}
                 <div
                   className="absolute inset-0 w-full h-full bg-black/95 border border-hacker-green/60 rounded-tr-[10px] rounded-bl-[10px] p-6 backdrop-blur-sm overflow-hidden"
-                  style={{ backfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}
+                  style={{
+                    backfaceVisibility: "hidden",
+                    transform: "rotateY(180deg)",
+                  }}
                 >
                   <div className="flex flex-col h-full min-h-0">
                     <div className="flex items-center justify-between mb-4">
@@ -142,7 +147,7 @@ const Projects: React.FC = () => {
                     <div className="flex-grow overflow-y-auto mb-6 pr-1">
                       <p
                         className="text-gray-300 font-mono text-xs leading-relaxed"
-                        style={{ textAlign: 'justify' }}
+                        style={{ textAlign: "justify" }}
                       >
                         {project.longDescription}
                       </p>
